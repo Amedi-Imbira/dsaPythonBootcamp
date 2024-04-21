@@ -2,6 +2,9 @@ from dataclasses import dataclass
 
 @dataclass
 class CreditCard:
+      """
+      Represents a credit card
+      """
       _customer: str
       _bank: str
       _account: str
@@ -29,12 +32,20 @@ class CreditCard:
             return self._balance
       
       def charge(self, price: float):
+            """
+            Method to process credit card payments
+            FIXME: The method can either return a boolean or 
+            do the calculation
+            """
             if self._balance + price > self._limit:
                   return False
             else:
                   self._balance += price
                   
       def make_payment(self, amount) -> None:
+            """
+            Method to process reducing the credit card balance
+            """
             if not isinstance(amount, (int, float)):
                   raise TypeError('Amount must be numerical')
             elif amount < 0:

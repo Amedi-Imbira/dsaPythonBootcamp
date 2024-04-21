@@ -8,7 +8,7 @@ class Flower:
       
       @property
       def name(self) -> str:
-            return self._name
+            return self._name.capitalize()
       
       @property
       def petals(self) -> int:
@@ -16,7 +16,7 @@ class Flower:
       
       @property
       def price(self) -> float:
-            return self._price
+            return f'${self._price}'
       
       @name.setter
       def name(self, val: str) -> None:
