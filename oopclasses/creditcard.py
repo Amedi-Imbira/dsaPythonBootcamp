@@ -13,11 +13,14 @@ class CreditCard:
       
       @property      
       def customer(self) -> str:
-            return self._customer
+            first, last = self._customer.split(' ')
+            return f'{first.capitalize()} {last.capitalize()}'
       
       @property
       def bank(self) -> str:
-            return self._bank
+            #FIXME: what if bank has three names. How can we make it dynamic
+            first, second = self._bank.split(' ')
+            return f'{first.capitalize()} {second.capitalize()}'
       
       @property
       def account(self) -> str:
@@ -25,21 +28,24 @@ class CreditCard:
       
       @property
       def limit(self) -> int:
-            return self._limit
+            return f'${self._limit}'
       
       @property
       def balance(self) -> float:
-            return self._balance
+            return f'${self._balance}'
+      
+      def _can_pay(self, price: float) -> bool:
+            if self._balance + price > self._limit:
+                  return False
+            else:
+                  return True
       
       def charge(self, price: float):
             """
             Method to process credit card payments
-            FIXME: The method can either return a boolean or 
-            do the calculation
+            FIXME: The method can either return a boolean or do the calculation
             """
-            if self._balance + price > self._limit:
-                  return False
-            else:
+            if self._can_pay(price):
                   self._balance += price
                   
       def make_payment(self, amount) -> None:
@@ -53,6 +59,6 @@ class CreditCard:
             
             self._balance -= amount
             
-cc = CreditCard('John Bowman', 'Carlifonia Savings', '2345 1232 4576 8787', 1000)
+cc = CreditCard('john bowman', 'Carlifonia Savings', '2345 1232 4576 8787', 1000)
 print(cc)
             
