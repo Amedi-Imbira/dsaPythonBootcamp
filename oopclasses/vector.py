@@ -23,7 +23,7 @@ class Vector:
       
       def __sub__(self, other: list[int]) -> list[int]:
             if len(self) != len(other):
-                  raise ValueError('Dimensions must agree')
+                  raise ValueError('Dimensions must be equal')
             
             result = Vector(len(self))
             
@@ -32,7 +32,7 @@ class Vector:
                   
             return result
       
-      def __neg__(self):
+      def __neg__(self) -> list[int]:
             result = Vector(len(self))
             
             for j in range(len(self)):
@@ -46,7 +46,7 @@ class Vector:
       def __ne__(self, other):
             return not self == other
       
-      def __str__(self):
+      def __str__(self) -> str:
             return '<' + str(self._coords)[1:-1] + '>'
       
 v1 = Vector(3)

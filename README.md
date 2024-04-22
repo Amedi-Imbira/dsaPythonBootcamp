@@ -1,7 +1,9 @@
-# dsaPythonBootcamp
-
 # Python Primer
-Learn the basics of Python
+ - Python is an interpreted language, OOP language, and dynamically typed
+ - variables and expressions
+ - decision structures
+ - iteration structures
+ - functions
 
 # OOP
 Learn Object oriented design and principles

@@ -58,7 +58,8 @@ class CreditCard:
                   raise ValueError('Amount cannot be negative')
             
             self._balance -= amount
-            
-cc = CreditCard('john bowman', 'Carlifonia Savings', '2345 1232 4576 8787', 1000)
-print(cc)
+
+if __name__ == '__main__':            
+      cc = CreditCard('john bowman', 'Carlifonia Savings', '2345 1232 4576 8787', 1000)
+      print(cc.bank)
             
