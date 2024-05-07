@@ -20,3 +20,6 @@ for k in range(len(primes)):
       
       print(f'Length = {a} || Capacity = {b}')
       primes.pop()
+      
+x = list(range(5, 10, 1))
+print(x)

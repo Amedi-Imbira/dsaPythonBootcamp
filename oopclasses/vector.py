@@ -43,7 +43,7 @@ class Vector:
       def __eq__(self, other):
             return self._coords == other._coords
       
-      def __ne__(self, other):
+      def __ne__(self, other: list[int]) -> bool:
             return not self == other
       
       def __str__(self) -> str:
