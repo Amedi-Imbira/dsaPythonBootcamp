@@ -12,10 +12,15 @@ class Array:
             return self._length
       
       def __getitem__(self, i):
-            # if not 0 <= i < self._length:
-            #       raise IndexError('array index out of range')
+            if not isinstance(i, int):
+                  raise TypeError('array indices must be integers or slices, not str')
             
-            
+            if i < 0:
+                  i += self._length
+                  
+            if not 0 <= i < self._length:
+                  
+                  raise IndexError('array index out of range')
             
             return self._A[i]
       
@@ -46,6 +51,7 @@ class Array:
             self._A = B
             
       def __str__(self):
+            
             return str(self._A)[::1]
             
 primes = Array()
@@ -53,6 +59,6 @@ primes.append(2)
 primes.append(3)
 primes.append(5)
 
-primes.pop()
+# primes.pop()
 
-print(primes[-2])
+print(primes)
